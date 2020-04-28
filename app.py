@@ -34,13 +34,8 @@ else:
 	bytes = str
 	basestring = basestring
 
-# Global variables
-#stationsLogFile = "A-clients.csv"
-#routersLogFile = "U-routers.csv"
-#kismetLogFile = "A-kismet.csv"
-#carLogFile = "final.log.csv"
 
-# Define file prefixes for output files. Their names correspond to the variables for debugging purposes.
+# Define file prefixes for output files. Their names correspond to the variables passed to the Flask routes.
 outFilenames = ["out_stationsAPsCountWithoutPNL_", "out_kismetLists_", "out_associatedClients_", "out_areaCount_", "out_channelCount_", "out_privacyCount_", "out_statistics_", "out_stationsAPsCount_", "out_uESSIDlist_"]
 
 firstRun = False
@@ -90,8 +85,8 @@ carLogFile = args.logfile
 
 
 # Function to calulate hash value of the name.kismet.csv file. The 
-# first six hex values are used to differentiate one Airodump-ng 
-# capture from another. See [*] function for more information.
+# first six values of the hash are used to differentiate one Airodump-ng 
+# capture from another.
 # The function was taken from https://stackoverflow.com/a/3431838
 def md5(fname):
     hash_md5 = hashlib.md5()
@@ -159,7 +154,7 @@ def essidsPerMAC(stationMAC):
     return results
 
 
-# Lambda function to group APs in name.kismet.csv file into different areas - the areas represent a 5x5 grid based on the highest/lowest latitude and longitude data recorded. To achieve this, both latitude and longitude are treated as floats. Height and witdh of the grid is calulated:
+# Lambda function to group APs in name.kismet.csv file into different geographic areas - the areas represent a 5x5 grid based on the highest/lowest latitude and longitude data recorded.
 # Height: max lat - min lat
 # Width: max lon - min lon
 # Both height and width is then divided by 5. This forms 1 row / columns in the grid.
@@ -365,7 +360,7 @@ def kismetLogsProcess():
 
 
 	##########################################
-	# Kismet.csv into list
+	# add name.kismet.csv into list
 
 	kismetLists = log_kismet.values.tolist()
 
@@ -513,8 +508,6 @@ def create_dataframes():
 
     # Fill 'nan' values with zeroes so JavaScript can understand it    
     csv_stations = csv_stations.fillna(0)
-
-    
     
     global listOfAllStations, associatedClients
 
