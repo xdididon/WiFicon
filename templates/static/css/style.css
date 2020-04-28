@@ -1,0 +1,42 @@
+html, body {
+	height: 100%;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding: 0;
+	background: #0D343A;
+	background: -webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(#000000)  );
+	background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+a {
+	font-size: 20px;
+}
+
+.nav-bar{
+	border-bottom-style: solid;
+	border-bottom-color: #92a8d1;
+}
+
+.active {
+	color: #4dff4d;
+}
+
+.active:hover {
+	color: #00cc44;
+}
+
+/* SEARCH BAR */
+.input-group {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.input-group.md-form.form-sm.form-1 input{
+	border: 1px solid #bdbdbd;
+	border-top-right-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+}
+
+.input-group-text {
+	background-color: #ff33ff;
+}

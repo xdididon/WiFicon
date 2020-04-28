@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Map</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="/static/css/style.css" rel="stylesheet" />
+	<link href="/static/css/map.css" rel="stylesheet" />
+	<script>
+		var listMACaddresses = {{ toView|tojson|safe }};
+		var unknownLocations = {{ unknownLoc|tojson|safe }};
+	</script>
+	{% endblock %}
+</head>
+
+<body>
+	<div class="container">
+		<div class="nav-bar">
+			<nav class="nav justify-content-center">
+				<a href="/" id="home-tab" class="nav-item nav-link active">
+					<i class="fa fa-home"></i> Home
+				</a>
+				<a href="/activity" id="scope-tab" class="nav-item nav-link active">
+					<i class="fa fa-eye"></i> Plots
+				</a>
+				<a href="/rel" id="rel-tab" class="nav-item nav-link active">
+					<i class="fa fa-handshake-o"></i> Relationships
+				</a>
+				<a href="/stats" id="stats-tab" class="nav-item nav-link active">
+					<i class="fa fa-bar-chart"></i> Statistics
+				</a>
+				<a href="/help" id="history-tab" class="nav-item nav-link active">
+					<i class="fa fa-info-circle"></i> Help
+				</a>
+			</nav>
+		</div>
+
+		<div class="splitscreen">
+			<div class="split left">
+				<h4 id="MACaddress"><b>11:22:33:44:55:66</b></h4>
+				<br>
+				<h6><b>Known ESSIDs:</b></h6>
+				<br>
+				<div id="tableHolder">
+					<table id="tableGPS">
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br><br>
+				<h6><b>Unknown ESSIDs:</b></h6>
+				<br>
+				<p id="uknownList"></p>
+			</div>
+
+			<div class="split right">
+				<div id="map"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="/static/js/googleMaps.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd60-yX-5H9AGL6jrkVtBnexQCw9IE8FA&callback=initMap"></script>
+</body>
+</html>

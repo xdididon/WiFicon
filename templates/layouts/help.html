@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Help</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link href="/static/css/help.css" rel="stylesheet" />
+	<script src="/static/js/help.js"></script>
+	{% endblock %}
+</head>
+
+<body>
+	<div class="container">
+		<div class="nav-bar">
+			<nav class="nav justify-content-center">
+				<a href="/" id="home-tab" class="nav-item nav-link active">
+					<i class="fa fa-home"></i> Home
+				</a>
+				<a href="/activity" id="scope-tab" class="nav-item nav-link active">
+					<i class="fa fa-eye"></i> Plots
+				</a>
+				<a href="/rel" id="rel-tab" class="nav-item nav-link active">
+					<i class="fa fa-handshake-o"></i> Relationships
+				</a>
+				<a href="/stats" id="stats-tab" class="nav-item nav-link active">
+					<i class="fa fa-bar-chart"></i> Statistics
+				</a>
+				<a href="/help" id="help-tab" class="nav-item nav-link active">
+					<i class="fa fa-info-circle"></i> Help
+				</a>
+			</nav>
+		</div>
+
+		<!-- accordion section taken from W3Schools https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
+		<h2>FAQ</h2>
+		<div id="accordion">
+			<div class="card">
+				<div class="card-header">
+					<a class="card-link" data-toggle="collapse" href="#collapseOne">About</a>
+				</div>
+				<div id="collapseOne" class="collapse show" data-parent="#accordion">
+					<div class="card-body">WiFicon is an application for displaying relationships between devices on wireless networks.
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">Home Page</a>
+				</div>
+				<div id="collapseTwo" class="collapse" data-parent="#accordion">
+					<div class="card-body">The main page contains 2 tables with clients and APs. The clients part is sorted by the highest count of probe requests recorded. The purpose of this table is to check and show on the map user's past associations. That is, if the user connected previously to WiFi-X and WiFi-Y, and location of these APs is in name.kismet.csv file, then display the APs on the map. The routers part of the table uses reversed logic. It displays MAC addresses of all clients whose probe requests match ESSID of particular AP. This table is also sorted by APs with the highest count of clients. Top of the list will usually have local businesses such as shopping centers or free WiFi hotspots. The list needs to be taken conservatively because WiFi names are ambiguous.
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">Plots Page</a>
+				</div>
+				<div id="collapseThree" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						The plots available on this page show a breakdown of total number of probe requests for particular client during 24 hour time period. The data is pulled from the name.log.csv file but due to the file size, often in millions, it only shows clients who sent at least 200 probe requests in any given day. This way a vast majority of clients is ignored becuase the data would not yield any useful results - this is especially when only war-driving was used to obtain the network capture data. To get best results use static antenna to monitor specific area for longer time period (day/s). The plots should highlight time period of user's activity making it easier to spot habbits. The higher the number of probe requests in the plot (for one hour) the higher the likelihood of the device being active on internet. Since devices transmit probe requests periodically lower count would indicate that the device was present in the area but the user probably did not browse internet. Of course, the data relies on successfully capturing probe requests. The worst results were recorded when Airodump-ng was used in its default channel hopping options. This is bacause the antenna spends lots of time on channels with no or little clients. 
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">Statistics Page</a>
+				</div>
+				<div id="collapseFour" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<h6><b>5x5 Grid:</b></h6>
+						<p>The grid separates APs into different areas. This is accomplished by treating latitude and longitude co-ordinates as floats. The highests / lowest latitude and longitude values are pulled from the <i>name.kismet.csv</i> which form the edges of a rectangle - as pictured below. Width and height of the rectangle is simply defined as <strong>height = max lat - min lat</strong> and <strong>width = max lat - min lat</strong>. Both height and width is then divided by <strong>5</strong>. This gives measures of each column / row in the grid. As not all cities and towns are square shaped the grid will include 0s along some of its edges. This should help to visualise the shape of the monitor area with the count of APs displaying the most populated areas.</p>
+						<img class="rectangle" src="/static/images/rectangle4.png" alt="Grid made out of lat/lon co-ordinates">
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">Data Processing</a>
+				</div>
+				<div id="collapseFive" class="collapse" data-parent="#accordion">
+					<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">Other</a>
+				</div>
+				<div id="collapseSix" class="collapse" data-parent="#accordion">
+					<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

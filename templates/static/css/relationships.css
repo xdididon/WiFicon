@@ -1,0 +1,165 @@
+html, body {
+	color: white;
+	height: 100%;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding: 0;
+	background: #0D343A;
+	background: -webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(#000000)  );
+	background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+a {
+	font-size: 20px;
+}
+
+h6 {
+	font-size:1.1em;
+}
+
+.nav-bar{
+	border-bottom-style: solid;
+	border-bottom-color: #92a8d1;
+}
+
+.active {
+	color: #4dff4d;
+}
+
+.active:hover {
+	color: #00cc44;
+}
+
+.heading {
+	padding: 15px;
+	text-align: center;
+}
+
+.heading {
+	padding: 15px;
+	text-align: center;
+}
+
+#accordion {
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.card-body {
+	color: black;
+}
+
+.tableHeader {
+	margin-top: 20px;
+	width: 100%;
+	height: 110px;
+	background-color: blue;
+	border-top-left-radius: 10px 10px;
+	border-top-right-radius: 10px 10px;
+}
+
+#rel-table {
+	cursor: pointer;
+}
+
+.leftHeader {
+	padding-top: 10px;
+	padding-left: 10px;
+	height: 100%;
+	width: 42%;
+	float: left;
+}
+
+.middleHeader {
+	padding-top: 10px;
+	height: 100%;
+	width: 30%;
+	display: inline-block;
+	text-align: right;
+}
+
+.rightHeader {
+	padding-top: 7px;
+	padding-right: 10px;
+	height: 100%;
+	width: 27%;
+	float: right;
+	padding-left: 15px;
+}
+
+#desc1 {
+	padding-top: 5px;
+}
+
+#desc3 {
+	padding-top: 5px;
+}
+
+#desc2 {
+	padding-top: 27px;
+}
+
+#desc4 {
+	padding-top: 27px;
+}
+
+#exludeDropdown {
+	margin-top: 5px;
+}
+
+#relDropdown {
+	margin-top: 20px;
+}
+
+.commonEssids {
+	margin-top: 20px;
+	width: 100%;
+	height: 75px;
+	background-color: green;
+	padding: 12px;
+	text-align: center;
+	font-size:1.1em;
+}
+
+.form-group {
+	margin-top: -21px;
+}
+
+.form-group2 {
+	margin-top: -18px;
+}
+
+.selected {
+	color: green;
+}
+
+.exlusionsBox {
+	background-color: green;
+	margin-top: 20px;
+	width: 100%;
+	height: 110px;
+	padding-top: 6px;
+	text-align: center;
+	border-top-left-radius: 10px 10px;
+	border-top-right-radius: 10px 10px;
+}
+
+.excl {
+	height: 80px;
+	background-color: black;
+}
+
+.buttonBox {
+	width: 100%;
+	height: 100%;
+}
+
+.btn {
+	width: 100%;
+}
+
+#exclusion-table {
+	font-size: 0.8em;
+	padding-left: 5px;
+	text-align: left;
+}

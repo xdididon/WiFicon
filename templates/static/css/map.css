@@ -1,0 +1,67 @@
+#map {
+	z-index: 1;
+	height: 100%;
+	border: solid;
+	visibility: visible;
+}
+
+#backdrop {
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: red;
+	visibility: hidden;
+}
+
+/* SPLIT SCREEN RULES */
+
+.splitscreen{
+	padding: 5px;
+	margin-top: 30px;
+	margin-right: 10px:
+}
+
+.split {
+ 	height: 83%;
+	width: 49%;
+	position: fixed;
+	z-index: 1;
+	top: 20;
+	overflow-x: hidden;
+}
+
+.left {
+	padding: 15px;
+	left: 20px;
+	color: white;
+}
+
+.right {
+	right: 5px;
+	background-color: white;
+	margin-right: 15px;
+}
+
+/* END OF SPLIT SCREEN RULES */
+
+#MACaddress{
+	text-align: center;
+	margin: 0 auto;
+	
+}
+
+
+#tableGPS {
+	width: 60%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#tableGPS td {
+	border-bottom: 1px solid #eee;
+}
+
+

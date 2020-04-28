@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>WiFicon</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/static/js/main.js"></script>
+	<link href="/static/css/style.css" rel="stylesheet"/>
+	<link href="/static/css/home.css" rel="stylesheet"/>
+	<script>
+		var clientsAssociated = {{ associatedClients|tojson|safe }};
+		var stationsWithProbeESSIDs = {{ stationsAPsCount|tojson|safe }};
+		var kismeLocations = {{ kismetLists|tojson|safe }};
+		var allStations = {{ stationsAPsCountWithoutPNL|tojson|safe }};
+		var stationsWithKnownClients = {{ uESSIDlist|tojson|safe }};
+	</script>
+	{% endblock %}
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="nav-bar">
+			<nav class="nav justify-content-center">
+				<a href="/" id="home-tab" class="nav-item nav-link active">
+					<i class="fa fa-home"></i> Home
+				</a>
+				<a href="/activity" id="scope-tab" class="nav-item nav-link active">
+					<i class="fa fa-eye"></i> Plots
+				</a>
+				<a href="/rel" id="rel-tab" class="nav-item nav-link active">
+					<i class="fa fa-handshake-o"></i> Relationships
+				</a>
+				<a href="/stats" id="stats-tab" class="nav-item nav-link active">
+					<i class="fa fa-bar-chart"></i> Statistics
+				</a>
+				<a href="/help" id="history-tab" class="nav-item nav-link active">
+					<i class="fa fa-info-circle"></i> Help
+				</a>
+			</nav>
+		</div>
+		<!-- SEARCH BAR -->
+		<div class="row">
+			<div id="left-c" class="col-md-2"></div>
+			<div id="middle-c" class="col-md-8">
+				<div class="input-group md-form form-md">
+					<div class="input-group-prepend" id="searchButton" onclick="checkMac()">
+						<span class="input-group-text cyan lighten-2"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
+					</div>
+					<input class="form-control" id="inputBox" type="text" placeholder="AA:BB:CC:DD:EE:FF" aria-label="Search" onkeyup="stringToUpper(this)">
+				</div>
+			</div>
+			<div id="right-c" class="col-md-2"></div>
+		</div>
+
+		<!-- BOOTSTRAP GRIDS -->
+
+		<!-- FIRST ROW SEARCH RESULTS -->
+		<div id="firstRow" class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10 searchBox">
+				<div id="searchResults">
+					<div id="displayResults">
+						<p id="resultsSign"><b>Search Results</b></p>
+						<div id="kismetResultsTableDiv">
+							<table id="kismetResultsTable">
+								<tbody>
+									<tr>
+										<td><b>ESSID</b></td>
+										<td><b>MAC</b></td>
+										<td><b>Latitude</b></td>
+										<td><b>Longitude</b></td>
+										<td><b>Map</b></td>							
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="stationsResultsTableDiv">
+
+							<table id="stationsResultsTable">
+								<tbody>
+									<tr>
+										<td><b>MAC</b></td>
+										<td><b>First Seen</b></td>
+										<td><b>Last Seen</b></td>
+										<td><b>Probe Requests</b></td>							
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="closeBox" onclick="closeSearchDiv()">X</div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+
+		<!-- SECOND ROW - TABLE -->
+		<div id="mainRow" class="row">
+			<div id="middle-column" class="col-md-8">
+				<div class="tabs">
+					<div class="tab-2">
+						<label for="tab2-1">Stations</label>
+						<input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+						<div>
+							<div class="pre-scrollable">
+								<div id="table-div">
+									<table id="kismetTable">
+										<tbody>
+											<tr>
+												<td><b>MAC</b></td>
+												<td><b>First Seen</b></td>
+												<td><b>Last Seen</b></td>
+												<td><b>Probe Requests</b></td>						
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tab-2">
+						<label for="tab2-2">Access Points</label>
+						<input id="tab2-2" name="tabs-two" type="radio">
+						<div>
+							<div class="pre-scrollable">
+								<div id="table-div">
+									<table id="accesspointTable">
+										<tbody>
+											<tr>
+												<td><b>ESSID</b></td>
+												<td><b>First Seen</b></td>
+												<td><b>Last Seen</b></td>
+												<td><b>Clients Count</b></td>						
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SECOND ROW - ASSOCIATIONS COLUMN -->
+
+			<div class="col-md-4 process-column">
+				<div class="rightSign">
+					<div class="pre-scrollable">
+						<p id="savedConnSign"><b>Probe Requests</b></p>
+						<table id="listTable">
+							<tbody>
+							</tbody>
+						</table>
+						<div class="btn-holder">
+							<button type="submit" value="essids" name="mapview" id="rightButton">Map View</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

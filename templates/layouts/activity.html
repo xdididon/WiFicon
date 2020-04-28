@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Scope</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link href="/static/css/style.css" rel="stylesheet" />
+	<link href="/static/css/activity.css" rel="stylesheet" />
+	<script src="/static/js/activity.js"></script>
+	<script>
+		var clientsAssociated = {{ associatedClients|tojson|safe }};
+		var requestsByDate = {{ dailyRequests|tojson|safe }};
+		var availableDates = {{ dateRange|tojson|safe }};
+	</script>
+	{% endblock %}
+</head>
+
+<body>
+	<div class="container">
+		<div class="nav-bar">
+			<nav class="nav justify-content-center">
+				<a href="/" id="home-tab" class="nav-item nav-link active">
+					<i class="fa fa-home"></i> Home
+				</a>
+				<a href="/activity" id="scope-tab" class="nav-item nav-link active">
+					<i class="fa fa-eye"></i> Plots
+				</a>
+				<a href="/rel" id="rel-tab" class="nav-item nav-link active">
+					<i class="fa fa-handshake-o"></i> Relationships
+				</a>
+				<a href="/stats" id="stats-tab" class="nav-item nav-link active">
+					<i class="fa fa-bar-chart"></i> Statistics
+				</a>
+				<a href="/help" id="history-tab" class="nav-item nav-link active">
+					<i class="fa fa-info-circle"></i> Help
+				</a>
+			</nav>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div id="gap"></div>
+		</div>
+	</div>
+	<div class="row">
+		<!-- Table with MAC addresses and probe requests count -->
+		<div class="col-lg-5 col-md-5 no-float">
+			<div class="divleft">
+				<div class="date-sign">
+					<div class="description">
+						<h5><b>Probe Requests Breakdown</b></h5>
+					</div>
+					<div class="date-dropdown">
+						<select id="datesDropdown">
+							<option id="firstDate"></option>
+						</select>
+					</div>
+				</div>
+				<div class="pre-scrollable">
+					<div class="table-div">
+						<table id="macProbeTable">
+							<tbody>
+								<tr>
+									<td><b></b></td>
+									<td><b></b></td>
+									<td><b></b></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Plots -->
+		<div class="col-lg-5 col-md-5 offset-md-1 offset-lg-1 firstrow">
+			<div class="plotholder">
+				<div class="pre-scrollable">
+					<table id="plotTable">
+						<tbody>
+							<tr>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+
+</script>
+</body>
+</html>

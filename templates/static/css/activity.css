@@ -1,0 +1,119 @@
+.tableBox {
+	color: white;
+	height: 100%;
+	width: 90%;
+	margin: 10px;
+	padding: 10px;
+}
+
+.pre-scrollable {
+	color: white;
+	padding-top: 20px;
+}
+
+#gap {
+	margin-top: 40px;
+}
+
+.firstrow {
+	color: white;
+}
+
+.divleft {
+	margin-left: 30px;
+	color: white;
+	text-align: center;
+}
+
+#macProbeTable {
+	text-align: center;
+}
+
+#macProbeTable th, td { 
+	padding-left: 15px;
+	padding-right: 15px;
+	cursor: pointer;
+}
+
+.pre-scrollable {
+	max-height: 540px;
+	overflow-y: scroll;
+}
+
+.plotdiv {
+	display: flex;
+	align-items: center;
+}
+
+.plotholder {
+	display: flex;
+	align-items: center;	
+}
+
+#plotTable th, #plotTable td { 
+	padding: 10px;
+	cursor: pointer;
+}
+
+.crossSign {
+	padding-top: 2px;
+	font-size: 1em;
+}
+
+.tableRow {
+	height: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.closeme {
+	background: blue;
+	margin-top: 0px;
+	height: 15%;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	visibility: visible;
+}
+
+.closeme:hover {
+	background: red;
+}
+
+.imageHolder {
+	height: 85%;
+	margin-bottom: 0px;
+}
+
+/* Table select rows*/
+.selected {
+	background-color: green;
+}
+
+#datesDropdown {
+	font-size: 1.2em;
+	font-style: bold;
+}
+
+/* DIVs for sign and dropdown */
+
+.date-sign {
+	height: 60px;
+	border-bottom: solid;
+	border-top: solid;
+}
+
+.description {
+	width: 75%;
+	float: left;
+	padding-top: 15px;
+	padding-left: 70px;
+}
+
+.date-dropdown {
+	width: 24%;
+	float: right;
+	padding-top: 9px;
+}

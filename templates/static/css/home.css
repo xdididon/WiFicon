@@ -1,0 +1,412 @@
+/* START RIGHT COLUMN DIV */
+
+.process-column {
+	margin-top: 15px;
+}
+
+.rightSign {
+	text-align: left;
+	padding-top: 10px;
+	background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+	height: 100%;
+	margin-right: 10px;
+	border-radius: 20px;
+	justify-content: space-between;
+	flex-direction: column;
+	display: flex;
+}
+
+.rightSign .btn-holder {
+	margin: 18px;
+	justify-content: flex-end;
+	display: flex;
+}
+
+#rightButton:not([disabled]) {
+	border-radius: 8px;
+	color:#ffffff;
+	background-color: #1976d2;
+	font-size:1.2em;
+	border:0;
+	cursor:pointer;
+	margin:1px;
+	visibility: visible;
+}
+
+#rightButton[disabled] {
+	border-radius: 8px;
+	color:#ffffff;
+	background-color: #ac5353;
+	font-size:1.2em;
+	border:0;
+	cursor:pointer;
+	margin:1px;
+	visibility: visible;
+}
+
+#rightButton[disabled]:hover
+{
+	background-color: #ac5353;
+}
+
+#rightButton:hover {
+	background-color: #1a1aff;
+}
+
+#savedConnSign {
+	font-style: bold;
+	color: white;
+	text-align: center;
+}
+
+#listTable {
+	margin-left: 20px;
+        width: 90%;
+	color: white;
+}
+
+#listTable td {
+	border-collapse: collapse;
+	border: none;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	text-align: left;
+}
+
+/* END RIGHT COLUMN DIV */
+
+#table-div {
+	margin: 20px 30px;
+	color: white;
+}
+
+/*
+https://stackoverflow.com/questions/52644035/how-to-show-a-pandas-dataframe-into-a-existing-flask-html-table
+} */
+
+#kismetTable {
+	border-collapse: collapse;
+	border: none;
+	margin-top: 15px;
+        width: 100%;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+
+#kismetTable tr, td {
+	border-collapse: collapse;
+	border: none;
+	border-bottom: 1px solid #eee;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#kismetTable th {
+	border: none;
+	border-bottom: 2px solid #eee;
+	padding: 8px;
+}
+
+#show_button20 {
+	border-radius: 8px;
+	color:#ffffff;
+	background-color: #1976d2;
+	font-size:0.8em;
+	border:0;
+	cursor:pointer;
+	margin:1px;
+}
+
+#check_button1, #check_button2, #check_button3, #check_button4, #check_button5, #check_button6, #check_button7, #check_button8, #check_button9, #check_button10, #check_button21 {
+	border-radius: 8px;
+	color: #ffffff;
+	background-color: #00b300;
+	font-size: 0.8em;
+	border: 0;
+	cursor: pointer;
+	margin: 1px;
+}
+
+#show_button20:hover {
+	background-color: #1a1aff;
+}
+
+#check_button1:hover, #check_button2:hover, #check_button3:hover, #check_button4:hover, #check_button5:hover, #check_button6:hover, #check_button7:hover, #check_button8:hover, #check_button9:hover, #check_button10:hover, #check_button21:hover {
+	background-color: #008000;
+}
+
+/* START SEARCH RESULTS DIV - FIRST ROW */
+
+#searchResults {
+	margin: 10px 10px;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	background-color: #D3D3D3;
+	display: none;
+	position: relative;
+}
+
+#displayResults {
+	width: 94%;
+	position: relative;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 25px 25px;
+	float: left;
+}
+
+#closeBox {
+	height: 40px;
+	width: 3%;
+        position: relative;
+        float: right;
+	font-size: 1.4em;
+	font-style: bold;
+	padding-top: 5px;
+	top: 0px;
+	right: 0px;
+}
+
+#closeBox:hover {
+	color: red;
+}
+
+#resultsTable {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#resultsTable td {
+	border-collapse: collapse;
+	border: none;
+}
+
+#resultsSign {
+	font-size: 1.4em;
+	font-style: bold;
+	text-align: center;
+}
+
+/* START KISMET DIV AND SEARCH RESULTS TABLE */
+#kismetResultsTableDiv {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: none;
+	display: none;
+}
+
+#kismetResultsTable {
+	width: 60%;
+	margin: 0 auto;
+}
+
+#kismetResultsTable td {
+	border-collapse: collapse;
+	border: none;
+}
+
+/* END KISMET DIV AND SEARCH RESULTS TABLE */
+#stationsResultsTableDiv {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: none;
+	display: none;
+}
+
+#stationsResultsTable {
+	width: 60%;
+	margin: 0 auto;
+}
+
+#stationsResultsTable td {
+	border-collapse: collapse;
+	border: none;
+}
+
+#accesspointTable {
+	border-collapse: collapse;
+	border: none;
+	margin-top: 15px;
+        width: 100%;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+
+#accesspointTable tr, td {
+	border-collapse: collapse;
+	border: none;
+	border-bottom: 1px solid #eee;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+
+/* Tabs section */
+
+button:focus, input:focus, textarea:focus, select:focus {
+	outline: none;
+}
+
+.tabs {
+	display: flex;
+	display: block;
+	display: -webkit-flex;
+	display: -moz-flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	flex-wrap: wrap;
+	overflow: hidden;
+	margin: 0;
+	
+}
+
+
+.tabs [class^="tab"] label, .tabs [class*=" tab"] label {
+	color: #efedef;
+	cursor: pointer;
+	display: block;
+	font-size: 1.1em;
+	font-weight: 300;
+	line-height: 1em;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.tabs [class^="tab"] [type="radio"], .tabs [class*=" tab"] [type="radio"] {
+	border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: block;
+	width: 100%;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 
+}
+
+.tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus, .tabs [class*=" tab"] [type="radio"]:hover, .tabs [class*=" tab"] [type="radio"]:focus {
+	border-bottom: 1px solid #ee264f; 
+}
+
+.tabs [class^="tab"] [type="radio"]:checked, .tabs [class*=" tab"] [type="radio"]:checked {
+	border-bottom: 2px solid #fd264f;
+}
+
+.tabs [class^="tab"] [type="radio"]:checked + div, .tabs [class*=" tab"] [type="radio"]:checked + div {
+	opacity: 1;
+}
+
+.tabs [class^="tab"] [type="radio"] + div, .tabs [class*=" tab"] [type="radio"] + div {
+	display: block;
+	opacity: 0;
+	padding: 2rem 0;
+	width: 90%;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out; 
+}
+
+.tabs .tab-2 {
+	width: 50%;
+}
+
+.tabs .tab-2 [type="radio"] + div {
+      width: 200%;
+      margin-left: 200%; 
+}
+
+.tabs .tab-2 [type="radio"]:checked + div {
+      margin-left: 0; 
+}
+
+.tabs .tab-2:last-child [type="radio"] + div {
+      margin-left: 100%; 
+}
+
+.tabs .tab-2:last-child [type="radio"]:checked + div {
+      margin-left: -100%; 
+}
+
+.pre-scrollable {
+	max-height: 440px;
+	overflow-y: scroll;
+}
+
+#highlightedText {
+	color: green;
+}
+
+/* TOGGLE SWITCH TAKEN FROM https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch 
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 10px;
+}
+
+.switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}*/
+/*
+input:checked + .slider {
+	background-color: #2196F3;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}*/
+
+/* Rounded sliders */
+/*.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}*/
+
+/* TOGGLE SWITCH END  */

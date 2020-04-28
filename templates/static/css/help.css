@@ -1,0 +1,40 @@
+html, body {
+	height: 100%;
+	margin-left: 12px;
+	margin-right: 16px;
+	background: #0D343A;
+	background: -webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(#000000)  );
+	background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+a {
+	font-size: 20px;
+}
+
+.nav-bar {
+	border-bottom-style: solid;
+	border-bottom-color: #92a8d1;
+}
+
+.active {
+	color: #4dff4d;
+}
+
+.active:hover {
+	color: #00cc44;
+}
+
+.heading {
+	padding: 15px;
+	text-align: center;
+}
+
+h2 {
+	margin-top: 30px;
+	color: white;
+	font-weight: bold;
+}
+
+#accordion {
+	margin-top: 30px;
+}
