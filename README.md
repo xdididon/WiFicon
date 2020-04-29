@@ -12,11 +12,11 @@ It processes Airodump-ng (1.6) logs and calculates the following relationship gr
 The application also provides:
 
 * Activity tracking
-* Access points density overview
+* Access point density overview
 
 WiFicon does not make links between devices by only observing which client is connected to which access point. 
-The application extracts the contents of each client's preferred network list (PNL) in the logs and computes relationships 
-this way. This results is an increase of 35% (based on the test capture - see below) more relationships being established. 
+The application extracts the contents of all client's preferred network list (PNL) in the logs and computes relationships 
+this way. This results is an increase of 35% (see below) more relationships being established. 
 By using PNL as a primary link between devices WiFicon is able to fully utilise Airodump-ng logs.
 
 Note that the application has been designed as PoC and at the moment it only works on the log files which were first formatted.
@@ -103,10 +103,11 @@ The grid shoud resemble the shape of the most populated areas. The picture of th
 ![grid map](/screenshots/7.png?raw=true "grid map")
 
 
-Graph comparing relationships based on connected clients only versus PNL based approach. Calculated as an unique connected 
-clients connections versus unique clients PNL entries in the file (this also includes connected clients since this connection 
-should be in their PNL even though in most cases it is not).
+Graph comparing relationships based on connected clients only versus PNL based approach.
 ![bar](/screenshots/8.png?raw=true "bar")
+
+- Calculated as unique connected clients connections versus unique clients PNL entries in the file (this also includes
+connected clients since this connection should be in their PNL even though in most cases it is not).
 
 ## Todo
 
