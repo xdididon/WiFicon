@@ -1,5 +1,4 @@
 # WiFicon
-Python (3) Web Application for Reading and Processing Airodump-ng (1.6) logs
 
 WiFicon (WiFi Connections) is a Python Flask Web application for visualising relationships between devices on wireless networks.
 It processes Airodump-ng (1.6) logs and calculates the following relationship groups:
