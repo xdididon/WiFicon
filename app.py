@@ -154,7 +154,7 @@ def essidsPerMAC(stationMAC):
     return results
 
 
-# Lambda function to group APs in name.kismet.csv file into different geographic areas - the areas represent a 5x5 grid based on the highest/lowest latitude and longitude data recorded.
+# Lambda function to group APs in name.kismet.csv file into different geographic areas - the areas represent the 5x5 grid.
 # Height: max lat - min lat
 # Width: max lon - min lon
 # Both height and width is then divided by 5. This forms 1 row / columns in the grid.
@@ -254,7 +254,7 @@ def countChannels(APdataframe):
             channelCount.append([str(counter), "0"])
             counter += 1
 
-            
+# Get encryption stats for the statistics page           
 def countPrv(dataframe):
     global privacyCount
 
@@ -267,6 +267,7 @@ def countPrv(dataframe):
             privacyCount.append([ i, str(priv)])
         else:
             privacyCount.append([ i, "0"])
+
 
 
 def getStatistics(UroutersDF, kismetDF, clientsDF):
@@ -320,21 +321,6 @@ def getStatistics(UroutersDF, kismetDF, clientsDF):
 	return statsd, carLogsDF
 
 
-def carLogs():
-	global carLogFile
-
-	car_station_log = pd.read_csv(carLogFile, usecols=["LocalTime" ,"BSSID", "Type"])
-	car_station_log['datetime'] = pd.to_datetime(car_station_log['LocalTime'])
-	car_station_log.drop(['LocalTime'], axis=1, inplace=True)
-	car_station_log = car_station_log.loc[car_station_log['Type'] != "AP"].applymap(lambda x: np.nan if
-                                                                      isinstance(x, basestring) and x.isspace() else x)
-	car_station_log.drop('Type', axis=1, inplace=True)
-	car_station_log = car_station_log.sort_values(by='datetime')
-	car_station_log["Count"] = 1
-
-	return car_station_log
-
-
 def carLogs2():
 # global carLogFile
 	
@@ -348,7 +334,6 @@ def carLogs2():
 	car_station_log["Count"] = 1
 
 	return car_station_log
-
 
 
 def kismetLogsProcess():
