@@ -106,7 +106,7 @@ The grid shoud resemble the shape of the most populated areas. The picture of th
 Graph comparing relationships based on connected clients only versus PNL based approach.
 ![bar](/screenshots/8.png?raw=true "bar")
 
-- Calculated as unique connected clients connections versus unique clients PNL entries in the file (this also includes
+Calculated as unique clients connections versus unique clients PNL entries in the file (this also includes
 connected clients since this connection should be in their PNL even though in most cases it is not).
 
 ## Todo
