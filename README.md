@@ -1,2 +1,114 @@
 # WiFicon
-Python Web Application for Reading and Processing Airodump-ng (1.6) logs
+Python (3) Web Application for Reading and Processing Airodump-ng (1.6) logs
+
+WiFicon (WiFi Connections) is a Python Flask Web application for visualising relationships between devices on wireless networks.
+It processes Airodump-ng (1.6) logs and calculates the following relationship groups:
+
+* station to access points relationship
+* access point to stations relationship
+* station to station relationship
+* station to geographical area relationship
+
+The application also provides:
+
+* Activity tracking
+* Access points density overview
+
+Unlike other tools which process Airodump-ng log files, WiFicon does not make links between devices by only observing which
+client is connected to which access point. WiFicon extracts the contents of each client's preferred network list (PNL) 
+in the logs and computes relationships this way. This results in an increase of 35% (based on the test capture - see below)
+more relationships being established. By using PNL as a primary link between devices WiFicon is able to fully utilise 
+Airodump-ng logs.
+
+Note that the application has been designed as PoC and at the moment it only works on the log files which are part of this 
+project. This will be updated as soon as I get more time.
+
+## Required
+
+Pandas, Numpy, Flask and Google Maps API Key
+
+```
+sudo apt install python3-pandas
+sudo apt install python3-numpy
+pip3 install Flask
+```
+
+Add your Google API key at the bottom of the templates/layouts/map.html page:
+```
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOURKEYGOESHERE&callback=initMap"></script>
+```
+## Usage
+```
+python3 app.py -c A-clients.csv -r U-routers.csv -k A-kismet.csv -l final.log.csv
+```
+
+* `-c`, path to the log file with all clients - normally the bottom part of the name.csv file
+* `-r`, path to the log file with all routers - normally the top part of the name.csv file
+* `-k`, path to the Kismet log (name.kismet.csv)
+* `-l`, path to the file with real time probe requests records (name.log.csv)
+
+The application was tested on Ubuntu and Kali Linux and the files in the capture directory:
+
+* 80,000 clients
+* 24,000 APs with known location
+* 500,000 clients' probe requests
+
+## Limitations
+
+* Very long initial loading time. WiFicon logs decrease this to around 10 seconds.
+* Basic design
+* Missing some client side functionality - highlighting rows in the table etc.
+
+## Screenshots
+
+Homepage
+![Homepage](/screenshots/1.png?raw=true "Homepage")
+
+
+Display PNL contests of particular client. It is possible to display ESSIDs with known location on the map.
+![Clients PNL](/screenshots/2.png?raw=true "Clients PNL")
+
+
+Map
+![Google Map](/screenshots/2a.png?raw=true "Google Map")
+
+
+Display all clients known to particular acces point. Connection "no" means that the client is matched by PNL to the access point.
+![AP list](/screenshots/3.png?raw=true "AP list")
+
+
+Clients activity tracking - hourly probe requests count. Clients with minimum 200 probe requests in a day are included in 
+the list.
+![Activity tracking](/screenshots/4.png?raw=true "Activity tracking")
+
+
+Station to stations relationships through PNL matching. This can theoretically reveal real world relationships especially 
+when the clients are matched through ESSID of home network as oppose to WiFI hotspots. The two ESSIDs in the green is what connects these stations.
+![Station to station relationships](/screenshots/5.png?raw=true "Station to station relationships")
+
+
+Grid showing access points density
+![Statistics page](/screenshots/6.png?raw=true "Statistics page")
+
+
+The idea behind the grid is to get max / min latitude and longitude values from the capture file and create a rectangle
+from it.
+![rectangle](/screenshots/6a.png?raw=true "rectangle")
+
+
+The grid shoud resemble the shape of the most populated areas. The market on the map (not part of the application...) are the
+corners of the rectangle.
+![grid map](/screenshots/7.png?raw=true "grid map")
+
+
+Graph comparing relationships based on connected clients only versus PNL based approach. Calculated as an unique connected 
+clients connections versus unique clients PNL entries in the file (this also includes connected clients since this connection should be in their PNL even though in most cases it is not).
+![bar](/screenshots/8.png?raw=true "bar")
+
+## Todo
+
+* Process user's supplied Airodump-ng logs
+* Improve design
+* Implements tagging - MAC addresses are not very user friendly
+* Improve the data processing part of the application
+* Add advanced functionality?
