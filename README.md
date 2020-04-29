@@ -39,7 +39,7 @@ Add your Google API key at the bottom of the templates/layouts/map.html page:
 ```
 ## Usage
 ```
-python3 app.py -c A-clients.csv -r U-routers.csv -k A-kismet.csv -l final.log.csv
+python3 app.py -c clients.csv -r routers.csv -k name.kismet.csv -l name.log.csv
 ```
 
 * `-c`, path to the log file with all clients - normally the bottom part of the name.csv file
