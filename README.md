@@ -14,9 +14,8 @@ The application also provides:
 * access point density overview
 
 WiFicon does not make links between devices by only observing which client is connected to which access point. 
-The application extracts the contents of all client's preferred network list (PNL) in the logs and computes relationships 
-this way. This results is an increase of 35% (see below) more relationships being established. 
-By using PNL as a primary link between devices WiFicon is able to fully utilise Airodump-ng logs.
+The application extracts the contents of every client's preferred network list (PNL) in the logs and then computes relationship
+links this way. This results in an increase of 35% (see below) more relationships being established. 
 
 Note that the application has been designed as PoC and at the moment it only works on the log files which were first formatted.
 I might add them here later if I can make them anonymous or even better I will make the application to accept any 
