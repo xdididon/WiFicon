@@ -49,10 +49,10 @@ python3 app.py -c clients.csv -r routers.csv -k name.kismet.csv -l name.log.csv
 
 
 The application was tested on Ubuntu and Kali Linux.
-Capture file contained:
+The capture file contained:
 
 * 80,000 clients
-* 24,000 APs with known location
+* 24,000 access points with location
 * 500,000 clients' probe requests
 
 ## Limitations
@@ -86,12 +86,12 @@ the list.
 
 
 Station to stations relationships through PNL matching. This can theoretically reveal real world relationships especially 
-when the clients are matched through ESSID of home network as oppose to WiFI hotspots. The two ESSIDs in the green is what 
+when the clients are matched through ESSID of home network as oppose to WiFi hotspots. The two ESSIDs in the green box are what 
 connects these stations.
 ![Station to station relationships](/screenshots/5.png?raw=true "Station to station relationships")
 
 
-Grid showing access points density
+Grid showing a density of access points.
 ![Statistics page](/screenshots/6.png?raw=true "Statistics page")
 
 
