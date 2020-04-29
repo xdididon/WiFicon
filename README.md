@@ -33,7 +33,7 @@ sudo apt install python3-numpy
 pip3 install Flask
 ```
 
-Add your Google API key at the bottom of the templates/layouts/map.html page:
+Insert your Google API key at the bottom of the templates/layouts/map.html page:
 ```
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOURKEYGOESHERE&callback=initMap"></script>
 ```
