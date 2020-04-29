@@ -47,7 +47,9 @@ python3 app.py -c clients.csv -r routers.csv -k name.kismet.csv -l name.log.csv
 * `-k`, path to the Kismet log (name.kismet.csv)
 * `-l`, path to the file with real time probe requests records (name.log.csv)
 
-The application was tested on Ubuntu and Kali Linux and a capture file which contained:
+
+The application was tested on Ubuntu and Kali Linux.
+Capture file contained:
 
 * 80,000 clients
 * 24,000 APs with known location
