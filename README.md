@@ -14,14 +14,14 @@ The application also provides:
 * Activity tracking
 * Access points density overview
 
-Unlike other tools which process Airodump-ng log files, WiFicon does not make links between devices by only observing which
-client is connected to which access point. WiFicon extracts the contents of each client's preferred network list (PNL) 
-in the logs and computes relationships this way. This results in an increase of 35% (based on the test capture - see below)
-more relationships being established. By using PNL as a primary link between devices WiFicon is able to fully utilise 
-Airodump-ng logs.
+WiFicon does not make links between devices by only observing which client is connected to which access point. 
+The application extracts the contents of each client's preferred network list (PNL) in the logs and computes relationships 
+this way. This results is an increase of 35% (based on the test capture - see below) more relationships being established. 
+By using PNL as a primary link between devices WiFicon is able to fully utilise Airodump-ng logs.
 
-Note that the application has been designed as PoC and at the moment it only works on the log files which are part of this 
-project. This will be updated as soon as I get more time.
+Note that the application has been designed as PoC and at the moment it only works on the log files which were first formatted.
+I might add them here later if I can make them anonymous or even better I will make the application to accept any 
+Airodump-ng (1.6) logs.
 
 ## Required
 
@@ -47,7 +47,7 @@ python3 app.py -c A-clients.csv -r U-routers.csv -k A-kismet.csv -l final.log.cs
 * `-k`, path to the Kismet log (name.kismet.csv)
 * `-l`, path to the file with real time probe requests records (name.log.csv)
 
-The application was tested on Ubuntu and Kali Linux and the files in the capture directory:
+The application was tested on Ubuntu and Kali Linux and a capture file which contained:
 
 * 80,000 clients
 * 24,000 APs with known location
@@ -83,7 +83,8 @@ the list.
 
 
 Station to stations relationships through PNL matching. This can theoretically reveal real world relationships especially 
-when the clients are matched through ESSID of home network as oppose to WiFI hotspots. The two ESSIDs in the green is what connects these stations.
+when the clients are matched through ESSID of home network as oppose to WiFI hotspots. The two ESSIDs in the green is what 
+connects these stations.
 ![Station to station relationships](/screenshots/5.png?raw=true "Station to station relationships")
 
 
@@ -96,13 +97,13 @@ from it.
 ![rectangle](/screenshots/6a.png?raw=true "rectangle")
 
 
-The grid shoud resemble the shape of the most populated areas. The market on the map (not part of the application...) are the
-corners of the rectangle.
+The grid shoud resemble the shape of the most populated areas. The picture of the map is not part of the application.
 ![grid map](/screenshots/7.png?raw=true "grid map")
 
 
 Graph comparing relationships based on connected clients only versus PNL based approach. Calculated as an unique connected 
-clients connections versus unique clients PNL entries in the file (this also includes connected clients since this connection should be in their PNL even though in most cases it is not).
+clients connections versus unique clients PNL entries in the file (this also includes connected clients since this connection 
+should be in their PNL even though in most cases it is not).
 ![bar](/screenshots/8.png?raw=true "bar")
 
 ## Todo
