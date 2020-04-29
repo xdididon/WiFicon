@@ -11,8 +11,8 @@ It processes Airodump-ng (1.6) logs and calculates the following relationship gr
 
 The application also provides:
 
-* Activity tracking
-* Access point density overview
+* activity tracking
+* access point density overview
 
 WiFicon does not make links between devices by only observing which client is connected to which access point. 
 The application extracts the contents of all client's preferred network list (PNL) in the logs and computes relationships 
