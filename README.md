@@ -67,7 +67,7 @@ Homepage
 ![Homepage](/screenshots/1.png?raw=true "Homepage")
 
 
-Display PNL contests of particular client. It is possible to display ESSIDs with known location on the map.
+Display a PNL contents of the particular client. It is possible to show ESSIDs with known location on the map.
 ![Clients PNL](/screenshots/2.png?raw=true "Clients PNL")
 
 
@@ -75,11 +75,12 @@ Map
 ![Google Map](/screenshots/2a.png?raw=true "Google Map")
 
 
-Display all clients known to particular acces point. Connection "no" means that the client is matched by PNL to the access point.
+Display all clients known to particular access point. Connection "no" means that the client is matched by PNL to the 
+access point.
 ![AP list](/screenshots/3.png?raw=true "AP list")
 
 
-Clients activity tracking - hourly probe requests count. Clients with minimum 200 probe requests in a day are included in 
+Client's activity tracking - hourly probe requests count. Clients with minimum 200 probe requests in a day are included in 
 the list.
 ![Activity tracking](/screenshots/4.png?raw=true "Activity tracking")
 
